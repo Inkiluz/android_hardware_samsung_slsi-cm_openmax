@@ -50,9 +50,6 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi-cm/exynos/include \
 	$(TOP)/hardware/samsung_slsi-cm/$(TARGET_BOARD_PLATFORM)/include
 
-LOCAL_ADDITIONAL_DEPENDENCIES += \
-	INSTALLED_KERNEL_HEADERS
-
 ifeq ($(BOARD_USE_KHRONOS_OMX_HEADER), true)
 LOCAL_CFLAGS += -DUSE_KHRONOS_OMX_HEADER
 LOCAL_C_INCLUDES += $(EXYNOS_OMX_INC)/khronos
@@ -61,5 +58,11 @@ ifeq ($(BOARD_USE_ANDROID), true)
 LOCAL_C_INCLUDES += $(ANDROID_MEDIA_INC)/openmax
 endif
 endif
+
+LOCAL_CFLAGS += -Wno-unused-parameter
+LOCAL_CFLAGS += -Wno-unused-variable
+LOCAL_CFLAGS += -Wno-unused-label
+LOCAL_CFLAGS += -Wno-enum-conversion
+LOCAL_CFLAGS += -Wno-unused-function
 
 include $(BUILD_SHARED_LIBRARY)

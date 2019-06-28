@@ -76,6 +76,10 @@ ifeq ($(TARGET_BOARD_PLATFORM),exynos4)
 LOCAL_CFLAGS += -DUSE_MFC5X_ALIGNMENT
 endif
 
+LOCAL_CFLAGS += -Wno-unused-parameter
+LOCAL_CFLAGS += -Wno-unused-variable
+LOCAL_CFLAGS += -Wno-unused-label
+
 LOCAL_SHARED_LIBRARIES := libhardware libnativewindow
 LOCAL_STATIC_LIBRARIES := liblog libcutils libarect libExynosVideoApi
 
@@ -91,9 +95,6 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi-cm/$(TARGET_BOARD_PLATFORM)/include \
 	$(TOP)/hardware/samsung_slsi-cm/$(TARGET_SOC)/include \
 	$(TOP)/frameworks/native/libs/arect/include
-
-LOCAL_ADDITIONAL_DEPENDENCIES += \
-	INSTALLED_KERNEL_HEADERS
 
 ifeq ($(BOARD_USE_ANDROID), true)
 LOCAL_C_INCLUDES += $(ANDROID_MEDIA_INC)/hardware

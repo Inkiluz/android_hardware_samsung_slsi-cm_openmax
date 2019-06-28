@@ -257,7 +257,6 @@ int searchLowPriority(
     else
         ret = 1;
 
-EXIT:
     return ret;
 }
 
@@ -351,7 +350,6 @@ OMX_ERRORTYPE Exynos_OMX_ResourceManager_Deinit()
 
     ret = OMX_ErrorNone;
 
-EXIT:
     FunctionOut();
 
     return ret;

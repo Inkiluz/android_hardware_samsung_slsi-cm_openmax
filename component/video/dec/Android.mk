@@ -20,9 +20,6 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi-cm/exynos/include \
 	$(TOP)/hardware/samsung_slsi-cm/$(TARGET_BOARD_PLATFORM)/include
 
-LOCAL_ADDITIONAL_DEPENDENCIES += \
-	INSTALLED_KERNEL_HEADERS
-
 LOCAL_STATIC_LIBRARIES := libExynosVideoApi
 LOCAL_SHARED_LIBRARIES := liblog
 
@@ -59,5 +56,14 @@ endif
 ifeq ($(BOARD_USE_STOREMETADATA), true)
 LOCAL_CFLAGS += -DUSE_STOREMETADATA
 endif
+
+LOCAL_CFLAGS += -Wno-unused-parameter
+LOCAL_CFLAGS += -Wno-unused-variable
+LOCAL_CFLAGS += -Wno-unused-function
+LOCAL_CFLAGS += -Wno-unused-label
+LOCAL_CFLAGS += -Wno-enum-conversion
+LOCAL_CFLAGS += -Wno-format
+LOCAL_CFLAGS += -Wno-parentheses-equality
+LOCAL_CFLAGS += -Wno-undefined-inline
 
 include $(BUILD_STATIC_LIBRARY)

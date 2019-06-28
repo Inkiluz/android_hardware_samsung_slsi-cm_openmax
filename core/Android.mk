@@ -23,9 +23,6 @@ LOCAL_C_INCLUDES := \
 	$(EXYNOS_OMX_TOP)/osal \
 	$(EXYNOS_OMX_TOP)/component/common
 
-LOCAL_ADDITIONAL_DEPENDENCIES := \
-	INSTALLED_KERNEL_HEADERS
-
 ifeq ($(BOARD_USE_KHRONOS_OMX_HEADER), true)
 LOCAL_CFLAGS += -DUSE_KHRONOS_OMX_HEADER
 LOCAL_C_INCLUDES += $(EXYNOS_OMX_INC)/khronos
@@ -34,6 +31,10 @@ ifeq ($(BOARD_USE_ANDROID), true)
 LOCAL_C_INCLUDES += $(ANDROID_MEDIA_INC)/openmax
 endif
 endif
+
+LOCAL_CFLAGS += -Wno-unused-parameter
+LOCAL_CFLAGS += -Wno-unused-variable
+LOCAL_CFLAGS += -Wno-unused-label
 
 include $(BUILD_SHARED_LIBRARY)
 
