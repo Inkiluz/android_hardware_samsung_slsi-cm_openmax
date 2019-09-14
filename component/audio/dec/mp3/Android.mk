@@ -3,6 +3,10 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
 
+LOCAL_CFLAGS += -Wno-Wenum-conversion
+LOCAL_CFLAGS += -Wno-unused-label
+LOCAL_CFLAGS += -Wno-unused-variable
+
 LOCAL_SRC_FILES := \
 	Exynos_OMX_Mp3dec.c \
 	library_register.c

@@ -1,6 +1,10 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
+LOCAL_CFLAGS += -Wno-unused-parameter
+LOCAL_CFLAGS += -Wno-unused-label
+LOCAL_CFLAGS += -Wno-unused-variable
+
 LOCAL_SRC_FILES := \
 	Exynos_OMX_Adec.c
 

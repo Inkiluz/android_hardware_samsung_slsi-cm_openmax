@@ -34,4 +34,8 @@ else
 LOCAL_C_INCLUDES += $(ANDROID_MEDIA_INC)/openmax
 endif
 
+LOCAL_CFLAGS += -Wno-enum-conversion
+LOCAL_CFLAGS += -Wno-unused-label
+LOCAL_CFLAGS += -Wno-unused-variable
+
 include $(BUILD_SHARED_LIBRARY)
